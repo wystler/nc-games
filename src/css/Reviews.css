@@ -5,13 +5,17 @@
 }
 
 .reviewCard {
-    border:2px solid green;
+    font-size: 10pt;
+    border:3px solid green;
     margin:10px;
+    width:480px;
 }
 
 .reviewCardHead {
     display:flex;
     justify-content: space-between;
+    border:3px solid blue;
+    margin:5px;
 }
 
 .reviewCardHead > ul {
@@ -22,4 +26,25 @@
 
 .reviewCardHead > img{
     max-height:100px;
+    max-width:100px;
+    border-left:3px solid blue;
+}
+
+.reviewCardBody {
+
+}
+
+.reviewCardFooter {
+    display:flex;
+    justify-content: space-evenly;
+    border:3px solid blue;
+    margin:5px;
+}
+
+.reviewCardFooter p{
+    margin:5px;
+}
+
+.reviewCardLabel {
+    font-weight:bold;
 }

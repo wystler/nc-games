@@ -6,13 +6,31 @@ const ReviewCard = (props) => {
 
     return (
         <div className="reviewCard">
+
             <div className="reviewCardHead">
                 <ul className="reviewCardHeadList">
-                    <li>{title}</li>
-                    <li>{category}</li>
-                    <li>{designer}</li>
+                    <li><span className="reviewCardLabel">Title :</span> {title}</li>
+                    <li><span className="reviewCardLabel">Category :</span> {category}</li>
+                    <li><span className="reviewCardLabel">Designer :</span> {designer}</li>
                 </ul>
                 <img src={review_img_url}/>
+            </div>
+
+            <p className="reviewCardBody">{review_body}</p>
+
+            <div className="reviewCardFooter">
+                <label>
+                <p className="reviewCardLabel">Review by</p>
+                <p>{owner}</p>
+                </label>
+                <label>
+                <p className="reviewCardLabel">Submitted</p>
+                <p>{created_at}</p>
+                </label>
+                <label>
+                <p className="reviewCardLabel">Votes</p>
+                <p>{votes}</p>
+                </label>
             </div>
         </div>
     )
