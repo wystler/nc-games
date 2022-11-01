@@ -20,7 +20,7 @@ const ReviewCard = (props) => {
 
             <div className="reviewCardFooter">
                 <label>
-                <p className="reviewCardLabel">Review by</p>
+                <p className="reviewCardLabel">Reviewed by</p>
                 <p>{owner}</p>
                 </label>
                 <label>
@@ -28,7 +28,7 @@ const ReviewCard = (props) => {
                 <p>{created_at.replace(/T.*/,"")}</p>
                 </label>
                 <label>
-                <p className="reviewCardLabel">Comment count</p>
+                <p className="reviewCardLabel">Comments</p>
                 <p>{comment_count}</p>
                 </label>
                 <label>
