@@ -14,8 +14,8 @@ const Reviews = () => {
     }, [])
 
     return (
-        <div>
-            {reviews.map(review => {return <ReviewCard review={review}/>})}
+        <div id="reviews">
+            {reviews.map(review => {return <ReviewCard key={review.review_id} review={review}/>})}
         </div>
     )
 }
