@@ -1,0 +1,9 @@
+#welcome {
+    display:flex;
+    font-size: 20pt;
+    height:100vh;
+    width:100vw;
+    align-items: center;
+    justify-content: center;
+    background-color:aliceblue;
+}

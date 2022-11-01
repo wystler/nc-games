@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
+import '../css/Welcome.css'
 
 const Welcome = () => {
 
     return (
-        <nav>
+        <div id="welcome">
             <Link to="/category/all">Look at the reviews</Link>
-        </nav>
+        </div>
     )
 }
 
