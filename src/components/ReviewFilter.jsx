@@ -5,13 +5,17 @@ const ReviewFilter = () => {
     const navigate = useNavigate()
 
     const handleChange = (event) => {
+        if (event.target.value) {
         navigate(`/category/${event.target.value}`)
+        } else {
+            navigate('/')
+        }
     }
 
     return (
         <div id="reviewFilter">
             <select onChange={handleChange}>
-                <option value="all">All</option>
+                <option value="">All</option>
                 <option value="dexterity">Dexterity</option>
                 <option value="strategy">Strategy</option>
                 <option value="hidden-roles">Hidden Roles</option>
