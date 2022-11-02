@@ -8,10 +8,12 @@ const Reviews = () => {
 
     const { category } = useParams()
     const [reviews, setReviews] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         fetchReviews(category)
             .then((reviewArray) => {
+                setIsLoading(false)
                 setReviews(reviewArray)
             })
     }, [category])
@@ -19,7 +21,8 @@ const Reviews = () => {
     return (
         <div id="reviews">
             {<ReviewFilter />}
-            {reviews.map(review => {return <ReviewCard key={review.review_id} review={review}/>})}
+            {isLoading ? <p className="loadingMessage">Loading</p> : 
+            reviews.map(review => {return <ReviewCard key={review.review_id} review={review}/>})}
         </div>
     )
 }

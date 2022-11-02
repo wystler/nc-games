@@ -6,6 +6,11 @@
     padding-top:100px;
 }
 
+.loadingMessage {
+    font-size: 30pt;
+    color:white;
+}
+
 #reviewFilter {
     background-color:rgb(91, 103, 155);
     border-bottom:5px solid white;
