@@ -6,10 +6,31 @@
     padding-top:100px;
 }
 
+#selectedReview {
+    display:flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items: center;
+}
+
 .loadingMessage {
-    font-size: 30pt;
+    font-size: 20pt;
     color:white;
 }
+
+#homeLink {
+    margin:20px;
+    font-size:20pt;
+    color:white;
+    text-decoration:none;
+    }
+
+#homeLink:hover{
+    font-size:20pt;
+    color:red;
+    text-decoration:none;
+    }
 
 #reviewFilter {
     background-color:rgb(91, 103, 155);

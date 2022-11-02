@@ -1,11 +1,16 @@
 import '../css/Reviews.css'
+import { useNavigate } from 'react-router-dom'
 
 const ReviewCard = (props) => {
 
-    const {id, title, category, designer, owner, review_body, review_img_url, created_at, votes, comment_count} = props.review
+    const {review_id, title, category, designer, owner, review_body, review_img_url, created_at, votes, comment_count} = props.review
+    const navigate = useNavigate()
+    const handleClick = (event) => {
+        navigate(`/review/${event}`)
+    }
 
     return (
-        <div className="reviewCard">
+        <div className="reviewCard" onClick={(event)=>handleClick(review_id)} >
 
             <div className="reviewCardHead">
                 <ul className="reviewCardHeadList">

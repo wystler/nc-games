@@ -22,7 +22,7 @@ const Reviews = () => {
         <div id="reviews">
             {<ReviewFilter />}
             {isLoading ? <p className="loadingMessage">Loading</p> : 
-            reviews.map(review => {return <ReviewCard key={review.review_id} review={review}/>})}
+            reviews.map(review => {return <ReviewCard key={review.review_id} review={review} />})}
         </div>
     )
 }

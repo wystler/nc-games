@@ -9,3 +9,10 @@ export const fetchReviews = (category) => {
         .then((res) => {
             return res.data})
 }
+
+export const fetchReviewById = (review_id) => {
+    return axios.get(`reviews/${review_id}`)
+        .then((res) => {
+            return res.data
+        })
+}
