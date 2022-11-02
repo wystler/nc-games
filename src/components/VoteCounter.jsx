@@ -10,21 +10,22 @@ const VoteCounter = (props) => {
                 setVoteCount(votes)
             },[votes])
 
-    const handleDownVote = () => {
-        setVoteCount((CurrentVoteCount) => CurrentVoteCount - 1)
-        updateVoteCount(review_id, {inc_votes: -1})
+    const handleVote = (val) => {
+        setVoteCount((CurrentVoteCount) => CurrentVoteCount + val)
+        updateVoteCount(review_id, {inc_votes: val})
     }
 
-    const handleUpVote = () => {
-        setVoteCount((CurrentVoteCount) => CurrentVoteCount + 1)
-        updateVoteCount(review_id, {inc_votes: 1})
-    }
+    // if (err) return <p>(err)</p>
 
     return (
-        <div>
-            <h2>{voteCount}</h2>
-            <button onClick={handleDownVote}>- vote</button>
-            <button onClick={handleUpVote}>+ vote</button>
+        <div id="VoteCounter">
+            <p>Votes
+            <div id="voteChanger">
+            <button onClick={()=>handleVote(-1)} id="downVoteButton">-</button>
+            <p>{voteCount}</p>
+            <button onClick={()=>handleVote(1)} id="upVoteButton">+</button>
+            </div>
+            </p>
         </div>
     )
 }

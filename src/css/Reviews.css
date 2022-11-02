@@ -108,3 +108,32 @@
 .footerInfo > p {
     margin:5px;
 }
+
+#VoteCounter > p {
+    font-weight: bold;
+}
+
+#voteChanger {
+    display:flex;
+    align-items:center;
+    font-weight:normal;
+}
+
+#voteChanger > button{
+    font-size:16pt;
+    width:50px;
+    height:30px;
+    margin:0px 10px;
+    border-radius: 20px;
+    border:2px solid grey;
+}
+
+#upVoteButton:hover{
+    background-color:rgb(12, 204, 12);
+    border:2px solid green;
+}
+
+#downVoteButton:hover{
+    background-color:red;
+    border:2px solid rgb(151, 0, 0);
+}
