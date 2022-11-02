@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
 import { updateVoteCount } from "../utils";
 
-const VoteCounter = (props) => {
+const VoteCounter = (props) => { 
 
     const {review_id, votes} = props
-    const [ voteCount, setVoteCount ] = useState(0)
+    const [voteCount, setVoteCount] = useState(votes)
     const [err, setErr] = useState(null)
-    const [disableUpButton, setDisableUpButton ] = useState(false)
     const [disableDownButton, setDisableDownButton ] = useState(false)
+    const [disableUpButton, setDisableUpButton ] = useState(false)
 
     useEffect(() => {
-                setVoteCount(votes)
-            },[votes])
+        if (voteCount-votes > 0) setDisableUpButton(true)
+        if (voteCount-votes === 0) {setDisableUpButton(false) 
+            setDisableDownButton(false)}
+        if (voteCount-votes < 0) setDisableDownButton(true)
+    },[voteCount]) 
 
     const handleVote = (val) => {
         setVoteCount((CurrentVoteCount) => CurrentVoteCount + val)
