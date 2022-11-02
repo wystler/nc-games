@@ -14,7 +14,7 @@ const VoteCounter = (props) => {
         if (voteCount-votes === 0) {setDisableUpButton(false) 
             setDisableDownButton(false)}
         if (voteCount-votes < 0) setDisableDownButton(true)
-    },[voteCount]) 
+    },[voteCount, votes]) 
 
     const handleVote = (val) => {
         setVoteCount((CurrentVoteCount) => CurrentVoteCount + val)
@@ -22,11 +22,11 @@ const VoteCounter = (props) => {
         updateVoteCount(review_id, {inc_votes: val})
             .catch((err) => {
                 setVoteCount((CurrentVoteCount) => CurrentVoteCount - val)
-                setErr('Something went wrong, please try voting again')
+                setErr('Something went wrong, click here to try voting again')
             })
     }
 
-    if (err) return <p>{err}</p>
+    if (err) return <p onClick={()=>setErr(null)}>{err}</p>
 
     return (
         <div id="VoteCounter">
