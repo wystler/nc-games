@@ -1,9 +1,37 @@
 #reviews {
     display:flex;
-    background-color:rgb(48, 95, 58);
     flex-wrap:wrap;
     justify-content:center;
     align-items: center;
+    padding-top:100px;
+}
+
+.loadingMessage {
+    font-size: 30pt;
+    color:white;
+}
+
+#reviewFilter {
+    background-color:rgb(91, 103, 155);
+    border-bottom:5px solid white;
+    height:80px;
+    display:flex;
+    justify-content: center;
+    position:fixed;
+    top:0;
+    width:100vw;
+}
+
+#reviewFilterSelecter {
+    font-size: 14pt;
+    height:50%;
+    align-self:center;
+}
+
+#reviewFilterSelecter > select{
+    text-align:center;
+    font-size:12pt;
+    margin:10px;
 }
 
 .reviewCard {
