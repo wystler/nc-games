@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 const ReviewCard = (props) => {
 
     const {review_id, title, category, designer, owner, review_body, review_img_url, created_at, votes, comment_count} = props.review
+    const {full} = props
     const navigate = useNavigate()
     const handleClick = (event) => {
         navigate(`/review/${event}`)
@@ -37,10 +38,11 @@ const ReviewCard = (props) => {
                 <p className="reviewCardLabel">Comments</p>
                 <p>{comment_count}</p>
                 </label>
-                <label>
-                <p className="reviewCardLabel">Votes</p>
-                </label>
-                <VoteCounter review_id={review_id} votes={votes}/>
+
+                {full ? <VoteCounter review_id={review_id} votes={votes}/> : 
+                <label> <p className="reviewCardLabel">Votes</p>
+                <p>{votes}</p>
+                </label>}
             </div>
         </div>
     )
