@@ -63,7 +63,7 @@
     font-size: 10pt;
     border:3px solid rgb(134, 111, 111);
     margin:10px;
-    min-height:250px;
+    min-height:280px;
     width:480px;
 }
 
@@ -78,32 +78,33 @@
 .reviewCardHead > ul {
     text-align: left;
     list-style:none;
-    padding-left:10px;
+    padding-top:5px;
+    padding-left:15px;
 }
 
-.reviewCardHead > img{
+.reviewCardHead > img {
     height:80px;
     width:80px;
     margin:5px;
 }
 
 .reviewCardBody {
-    margin:20px;
+    margin:0px 20px;
 }
 
 .reviewCardFooter {
     background-color:rgba(0,0,0,0.1);
-    padding:3px;
     display:flex;
+    align-items: center;
     justify-content: space-evenly;
     border:2px solid rgb(94, 94, 117);
     margin:5px;
 }
 
-.reviewCardFooter p{
-    margin:5px;
-}
-
 .reviewCardLabel {
     font-weight:bold;
+}
+
+.footerInfo > p {
+    margin:5px;
 }

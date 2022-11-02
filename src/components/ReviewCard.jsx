@@ -27,21 +27,21 @@ const ReviewCard = (props) => {
             <p className="reviewCardBody">{review_body.slice(0, 280)}.....</p>}
 
             <div className="reviewCardFooter">
-                <label>
+                <label className="footerInfo">
                 <p className="reviewCardLabel">Reviewed by</p>
                 <p>{owner}</p>
                 </label>
-                <label>
+                <label className="footerInfo">
                 <p className="reviewCardLabel">Submitted</p>
                 <p>{created_at.replace(/T.*/,"")}</p>
                 </label>
-                <label>
+                <label className="footerInfo">
                 <p className="reviewCardLabel">Comments</p>
                 <p>{comment_count}</p>
                 </label>
 
                 {full ? <VoteCounter review_id={review_id} votes={votes}/> : 
-                <label> <p className="reviewCardLabel">Votes</p>
+                <label className="footerInfo"> <p className="reviewCardLabel">Votes</p>
                 <p>{votes}</p>
                 </label>}
             </div>
