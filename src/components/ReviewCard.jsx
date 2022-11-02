@@ -22,9 +22,9 @@ const ReviewCard = (props) => {
                 </ul>
                 <img src={review_img_url} alt={title}/>
             </div>
-            {review_body.length < 280 ? 
-            <p className="reviewCardBody">{review_body}</p> :
-            <p>{review_body.slice(0, 280)}.....</p>}
+            {full ? <p className="reviewCardBody">{review_body}</p> :
+            review_body.length < 280 ? <p className="reviewCardBody">{review_body}</p> :
+            <p className="reviewCardBody">{review_body.slice(0, 280)}.....</p>}
 
             <div className="reviewCardFooter">
                 <label>
