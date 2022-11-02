@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { fetchReviews } from './utils.jsx'
+import { fetchReviews } from '../utils.jsx'
 import ReviewCard from './ReviewCard.jsx'
 import ReviewFilter from './ReviewFilter.jsx'
 import { useParams } from 'react-router-dom'
