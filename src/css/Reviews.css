@@ -111,6 +111,7 @@
 
 #VoteCounter > p {
     font-weight: bold;
+    margin:5px 0 0 0;
 }
 
 #voteChanger {

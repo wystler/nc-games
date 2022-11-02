@@ -6,6 +6,8 @@ const VoteCounter = (props) => {
     const {review_id, votes} = props
     const [ voteCount, setVoteCount ] = useState(0)
     const [err, setErr] = useState(null)
+    const [disableUpButton, setDisableUpButton ] = useState(false)
+    const [disableDownButton, setDisableDownButton ] = useState(false)
 
     useEffect(() => {
                 setVoteCount(votes)
@@ -25,13 +27,12 @@ const VoteCounter = (props) => {
 
     return (
         <div id="VoteCounter">
-            <p>Votes
+            <p>Votes</p>
             <div id="voteChanger">
-            <button onClick={()=>handleVote(-1)} id="downVoteButton">-</button>
+            <button onClick={()=>handleVote(-1)} id="downVoteButton" disabled={disableDownButton}>-</button>
             <p>{voteCount}</p>
-            <button onClick={()=>handleVote(1)} id="upVoteButton">+</button>
+            <button onClick={()=>handleVote(1)} id="upVoteButton" disabled={disableUpButton}>+</button>
             </div>
-            </p>
         </div>
     )
 }

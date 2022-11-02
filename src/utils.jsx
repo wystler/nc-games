@@ -18,7 +18,6 @@ export const fetchReviewById = (review_id) => {
 }
 
 export const updateVoteCount = (review_id, voteCount) => {
-    console.log(voteCount)
     return axios.patch(`reviews/${review_id}`, voteCount)
         .then((res) => {
             return res
