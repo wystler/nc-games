@@ -1,4 +1,5 @@
 import '../css/Reviews.css'
+import VoteCounter from './VoteCounter'
 import { useNavigate } from 'react-router-dom'
 
 const ReviewCard = (props) => {
@@ -18,7 +19,7 @@ const ReviewCard = (props) => {
                     <li><span className="reviewCardLabel">Category :</span> {category}</li>
                     <li><span className="reviewCardLabel">Designer :</span> {designer}</li>
                 </ul>
-                <img src={review_img_url}/>
+                <img src={review_img_url} alt={title}/>
             </div>
 
             <p className="reviewCardBody">{review_body}</p>
@@ -38,8 +39,8 @@ const ReviewCard = (props) => {
                 </label>
                 <label>
                 <p className="reviewCardLabel">Votes</p>
-                <p>{votes}</p>
                 </label>
+                <VoteCounter review_id={review_id} votes={votes}/>
             </div>
         </div>
     )
