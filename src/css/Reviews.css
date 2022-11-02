@@ -17,11 +17,16 @@
     width:100vw;
 }
 
-#reviewFilter > select {
+#reviewFilterSelecter {
     font-size: 14pt;
-    align-self:center;
     height:50%;
-    text-align: center;
+    align-self:center;
+}
+
+#reviewFilterSelecter > select{
+    text-align:center;
+    font-size:12pt;
+    margin:10px;
 }
 
 .reviewCard {
