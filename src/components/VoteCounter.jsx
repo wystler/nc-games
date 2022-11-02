@@ -5,6 +5,7 @@ const VoteCounter = (props) => {
 
     const {review_id, votes} = props
     const [ voteCount, setVoteCount ] = useState(0)
+    const [err, setErr] = useState(null)
 
     useEffect(() => {
                 setVoteCount(votes)
@@ -12,10 +13,15 @@ const VoteCounter = (props) => {
 
     const handleVote = (val) => {
         setVoteCount((CurrentVoteCount) => CurrentVoteCount + val)
+        setErr(null)
         updateVoteCount(review_id, {inc_votes: val})
+            .catch((err) => {
+                setVoteCount((CurrentVoteCount) => CurrentVoteCount - val)
+                setErr('Something went wrong, please try voting again')
+            })
     }
 
-    // if (err) return <p>(err)</p>
+    if (err) return <p>(err)</p>
 
     return (
         <div id="VoteCounter">
