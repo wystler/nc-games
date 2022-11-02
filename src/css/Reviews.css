@@ -134,7 +134,17 @@
     border:2px solid green;
 }
 
+#upVoteButton:disabled{
+    background-color:rgb(12, 204, 12);
+    border:2px solid green;
+}
+
 #downVoteButton:hover{
+    background-color:red;
+    border:2px solid rgb(151, 0, 0);
+}
+
+#downVoteButton:disabled{
     background-color:red;
     border:2px solid rgb(151, 0, 0);
 }
