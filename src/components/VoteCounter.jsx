@@ -26,7 +26,7 @@ const VoteCounter = (props) => {
             })
     }
 
-    if (err) return <p>(err)</p>
+    if (err) return <p>{err}</p>
 
     return (
         <div id="VoteCounter">
