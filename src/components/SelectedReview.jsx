@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { fetchReviewById } from '../utils.jsx'
 import ReviewCard from './ReviewCard.jsx'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 const SelectedReview = () => {
 
@@ -15,12 +15,15 @@ const SelectedReview = () => {
                 setIsLoading(false)
                 setReview(selectedReview)
             })
-    }, [])
+    }, [review_id])
 
     return (
         <div id="selectedReview">
             {isLoading ? <p className="loadingMessage">Loading</p> : 
-            <ReviewCard key={review.review_id} review={review} />}
+            <>
+            <Link to="/" id="homeLink">Back to reviews</Link>
+            <ReviewCard key={review.review_id} review={review} />
+            </>}
         </div>
     )
 }
