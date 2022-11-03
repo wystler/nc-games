@@ -23,3 +23,10 @@ export const updateVoteCount = (review_id, voteCount) => {
             return res
         })
 }
+
+export const fetchComments = (review_id) => {
+    return axios.get(`reviews/${review_id}/comments`)
+        .then((res) => {
+            return res.data
+        })
+}
