@@ -1,11 +1,13 @@
 import VoteCounter from "./VoteCounter";
+import '../css/Comments.css'
 
 const CommentCard = (props) => {
 
     const {comment_id, body, votes, author, review_id, created_at} = props.comment
 
     return (
-        <div className="commentCard">         
+        <div className="commentCard">
+            <p className="commentCardBody">{body}</p>         
             <div className="commentCardFooter">
                 <label className="footerInfo">
                 <p className="commentCardLabel">Reviewed by</p>

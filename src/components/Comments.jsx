@@ -19,6 +19,7 @@ const Comments = (props) => {
 
     return (
         <div id="comments">
+            <h2 id="commentHeader">Comments</h2>
             {
             isLoading ? <p className="loadingMessage">Loading</p> : 
             comments.length > 0 ? comments.map(comment => {return <CommentCard key={comment.comment_id} comment={comment} />}) :
