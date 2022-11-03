@@ -42,6 +42,14 @@
     font-weight:bold;
 }
 
+.commentButton {
+    width:470px;
+    margin:5px;
+    height:40px;
+    border-radius: 20px;
+    border:2px solid grey;
+}
+
 #addCommentForm {
     display:flex;
     flex-direction: column;
@@ -55,7 +63,20 @@
 
 #newCommentTextArea {
     height:200px;
-    
+    margin:5px;  
+    border:2px solid grey;
+}
+
+#submitNewCommentButton {
+    margin:5px;
+    height:40px;
+    border-radius: 20px;
+    border:2px solid grey;
+}
+
+#submitNewCommentButton:hover {
+    background-color:rgb(12, 204, 12);
+    border:2px solid green;
 }
 
 #VoteCounter > p {

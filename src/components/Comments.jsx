@@ -28,8 +28,8 @@ const Comments = (props) => {
             <h2 id="commentHeader">Comments</h2>
             {
             addComment ? 
-            <><button onClick={()=>setAddComment(false)}>Close add comment</button> <AddCommentForm username={username}/></> : 
-            <button onClick={handleClickAddYourComment}>Add your own comment</button>}
+            <><button onClick={()=>setAddComment(false)} className="commentButton">Close add comment</button> <AddCommentForm username={username}/></> : 
+            <button onClick={handleClickAddYourComment} className="commentButton">Add your own comment</button>}
             {
             isLoading ? <p className="loadingMessage">Loading</p> : 
             comments.length > 0 ? comments.map(comment => {return <CommentCard key={comment.comment_id} comment={comment} />}) :
