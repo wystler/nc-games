@@ -4,12 +4,13 @@ import { addComment } from '../utils.jsx'
 const AddCommentForm = (props) => {
 
     const {review_id, username, setAddComment} = props
-    const [commentBody, setCommentBody] = useState("")
+    const [commentBody, setCommentBody] = useState()
     const [err, setErr] = useState(null)
     const [disableSubmit, setDisableSubmit] = useState(false)
 
     const handleSubmitNewComment = (event) => {
         event.preventDefault()
+        if(commentBody.length<20) {return setErr("comment must be at least 20 characters long")}
         setErr(null)
         setDisableSubmit(true)
         addComment(review_id, {body:commentBody, username:username})
@@ -27,7 +28,7 @@ const AddCommentForm = (props) => {
     return (
         <form id="addCommentForm" onSubmit={handleSubmitNewComment}>
             <p>Add comment as {username}</p>
-            <input type="textarea" value={commentBody} onChange={(event) => setCommentBody(event.target.value)} id="newCommentTextArea"></input>
+            <textarea value={commentBody} onChange={(event) => setCommentBody(event.target.value)} id="newCommentTextArea" placeholder="comments must be at least 20 characters long..."></textarea>
             <button type="submit" disabled={disableSubmit} id="submitNewCommentButton">Submit your comment</button>
             <p>{err}</p>
         </form>     
