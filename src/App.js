@@ -6,11 +6,12 @@ import { useState } from 'react'
  
 function App() {
 
-  const [username, setUsername] = useState("cooljmessy")
+  const [username, setUsername] = useState("")
 
   return (
     <BrowserRouter>
       <div className="App">
+        {setUsername("cooljmessy")}
         <Routes>
             <Route path='/' element={<Reviews />} />
             <Route path='/category/:category' element={<Reviews />} />
