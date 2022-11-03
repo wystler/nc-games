@@ -17,7 +17,7 @@ const Comments = (props) => {
                 if (Array.isArray(commentArray)) {
                 setComments(commentArray)}             
             })
-    }, [review_id])
+    }, [review_id, addComment])
 
     const handleClickAddYourComment = () => {
         setAddComment(true)
@@ -28,7 +28,7 @@ const Comments = (props) => {
             <h2 id="commentHeader">Comments</h2>
             {
             addComment ? 
-            <><button onClick={()=>setAddComment(false)} className="commentButton">Close add comment</button> <AddCommentForm review_id={review_id} username={username}/></> : 
+            <><button onClick={()=>setAddComment(false)} className="commentButton">Close add comment</button> <AddCommentForm review_id={review_id} username={username} setAddComment={setAddComment}/></> : 
             <button onClick={handleClickAddYourComment} className="commentButton">Add your own comment</button>}
             {
             isLoading ? <p className="loadingMessage">Loading</p> : 
