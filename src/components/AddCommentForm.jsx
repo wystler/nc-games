@@ -1,7 +1,12 @@
-const AddCommentForm = () => {
+const AddCommentForm = (props) => {
+
+    const {username} = props
     return (
-        <div>
-        </div>
+        <form id="addCommentForm">
+            <p>Add comment as {username}</p>
+            <input id="newCommentTextArea" type="textarea" name="body"></input>
+            <input type="submit" value="Submit new comment"></input>
+        </form>
     )
 }
 
