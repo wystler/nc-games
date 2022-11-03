@@ -48,8 +48,8 @@ const ReviewFilter = (props) => {
 
                 <label id="reviewFilterOrder">in
                     <select className="filterSelecter" onChange={handleChangeOrder}>
-                        <option value="asc">Ascending</option>
                         <option value="desc">Descending</option>
+                        <option value="asc">Ascending</option>
                     </select>
                     order
                 </label>
