@@ -4,6 +4,8 @@ import '../css/Comments.css'
 const CommentCard = (props) => {
 
     const {comment_id, body, votes, author, review_id, created_at} = props.comment
+    const date = created_at.replace(/T.*/,"")
+    const time = created_at.match(/\d\d:\d\d/)
 
     return (
         <div className="commentCard">
@@ -15,7 +17,7 @@ const CommentCard = (props) => {
                 </label>
                 <label className="footerInfo">
                 <p className="commentCardLabel">Submitted</p>
-                <p>{created_at.replace(/T.*/,"")}</p>
+                <p>{date} - {time}</p>
                 </label>
                 <VoteCounter comment_id={comment_id} votes={votes}/> 
             </div>
