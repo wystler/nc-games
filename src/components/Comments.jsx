@@ -5,7 +5,7 @@ import { fetchComments } from '../utils.jsx'
 
 const Comments = (props) => {
 
-    const { review_id } = props
+    const { review_id, username } = props
     const [comments, setComments] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [addComment, setAddComment] = useState(false)
@@ -28,7 +28,7 @@ const Comments = (props) => {
             <h2 id="commentHeader">Comments</h2>
             {
             addComment ? 
-            <><button onClick={()=>setAddComment(false)}>Close add comment</button> <AddCommentForm /></> : 
+            <><button onClick={()=>setAddComment(false)}>Close add comment</button> <AddCommentForm username={username}/></> : 
             <button onClick={handleClickAddYourComment}>Add your own comment</button>}
             {
             isLoading ? <p className="loadingMessage">Loading</p> : 
