@@ -43,13 +43,13 @@
     width:100vw;
 }
 
-#reviewFilterSelecter {
+#reviewFilterCategory {
     font-size: 14pt;
     height:50%;
     align-self:center;
 }
 
-#reviewFilterSelecter > select{
+#reviewFilterCategory > select{
     text-align:center;
     font-size:12pt;
     margin:10px;
