@@ -2,9 +2,8 @@ import axios from "axios"
 axios.defaults.baseURL = "https://nc-board-game-api.herokuapp.com/api/"
 
 export const fetchReviews = (category, sort_by, order) => {
-    let queryString = ""
-    if (category) queryString = `?category=${category}`
-    if (sort_by) queryString += `&sort_by=${sort_by}&order=${order}`
+    let queryString = `?sort_by=${sort_by}&order=${order}`
+    if (category) queryString = `?category=${category}&sort_by=${sort_by}&order=${order}`
     return axios.get(`reviews${queryString}`)
         .then((res) => {
             return res.data})
