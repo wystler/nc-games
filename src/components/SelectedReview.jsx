@@ -22,7 +22,7 @@ const SelectedReview = () => {
             {isLoading ? <p className="loadingMessage">Loading</p> : 
             <>
             <Link to="/" id="homeLink">Back to reviews</Link>
-            <ReviewCard key={review.review_id} review={review} />
+            <ReviewCard key={review.review_id} review={review} fullReview={true}/>
             </>}
         </div>
     )

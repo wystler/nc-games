@@ -1,9 +1,11 @@
 import '../css/Reviews.css'
+import VoteCounter from './VoteCounter'
 import { useNavigate } from 'react-router-dom'
 
 const ReviewCard = (props) => {
 
     const {review_id, title, category, designer, owner, review_body, review_img_url, created_at, votes, comment_count} = props.review
+    const {fullReview} = props
     const navigate = useNavigate()
     const handleClick = (event) => {
         navigate(`/review/${event}`)
@@ -18,28 +20,30 @@ const ReviewCard = (props) => {
                     <li><span className="reviewCardLabel">Category :</span> {category}</li>
                     <li><span className="reviewCardLabel">Designer :</span> {designer}</li>
                 </ul>
-                <img src={review_img_url}/>
+                <img src={review_img_url} alt={title}/>
             </div>
-
-            <p className="reviewCardBody">{review_body}</p>
+            {fullReview ? <p className="reviewCardBody">{review_body}</p> :
+            review_body.length < 280 ? <p className="reviewCardBody">{review_body}</p> :
+            <p className="reviewCardBody">{review_body.slice(0, 280)}.... <span id="moreReview">click for more</span></p>}
 
             <div className="reviewCardFooter">
-                <label>
+                <label className="footerInfo">
                 <p className="reviewCardLabel">Reviewed by</p>
                 <p>{owner}</p>
                 </label>
-                <label>
+                <label className="footerInfo">
                 <p className="reviewCardLabel">Submitted</p>
                 <p>{created_at.replace(/T.*/,"")}</p>
                 </label>
-                <label>
+                <label className="footerInfo">
                 <p className="reviewCardLabel">Comments</p>
                 <p>{comment_count}</p>
                 </label>
-                <label>
-                <p className="reviewCardLabel">Votes</p>
+
+                {fullReview ? <VoteCounter review_id={review_id} votes={votes}/> : 
+                <label className="footerInfo"> <p className="reviewCardLabel">Votes</p>
                 <p>{votes}</p>
-                </label>
+                </label>}
             </div>
         </div>
     )
