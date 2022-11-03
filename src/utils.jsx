@@ -17,8 +17,15 @@ export const fetchReviewById = (review_id) => {
         })
 }
 
-export const updateVoteCount = (review_id, voteCount) => {
+export const updateReviewVoteCount = (review_id, voteCount) => {
     return axios.patch(`reviews/${review_id}`, voteCount)
+        .then((res) => {
+            return res
+        })
+}
+
+export const updateCommentVoteCount = (comment_id, voteCount) => {
+    return axios.patch(`comments/${comment_id}`, voteCount)
         .then((res) => {
             return res
         })

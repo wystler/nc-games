@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { updateVoteCount } from "../utils";
+import { updateReviewVoteCount, updateCommentVoteCount } from "../utils";
 
 const VoteCounter = (props) => { 
 
-    const {review_id, votes} = props
+    const {review_id, comment_id, votes} = props
     const [voteCount, setVoteCount] = useState(votes)
     const [err, setErr] = useState(null)
     const [disableDownButton, setDisableDownButton ] = useState(false)
@@ -19,11 +19,17 @@ const VoteCounter = (props) => {
     const handleVote = (val) => {
         setVoteCount((CurrentVoteCount) => CurrentVoteCount + val)
         setErr(null)
-        updateVoteCount(review_id, {inc_votes: val})
-            .catch((err) => {
-                setVoteCount((CurrentVoteCount) => CurrentVoteCount - val)
-                setErr('Something went wrong, click here to try voting again')
-            })
+        if (comment_id) {
+            updateCommentVoteCount(comment_id, {inc_votes: val})
+                .catch((err) => {
+                    setVoteCount((CurrentVoteCount) => CurrentVoteCount - val)
+                    setErr('Something went wrong, click here to try voting again')})
+        } else {
+            updateReviewVoteCount(review_id, {inc_votes: val})
+                .catch((err) => {
+                    setVoteCount((CurrentVoteCount) => CurrentVoteCount - val)
+                    setErr('Something went wrong, click here to try voting again')})
+        }
     }
 
     if (err) return <p onClick={()=>setErr(null)}>{err}</p>

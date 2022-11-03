@@ -19,10 +19,7 @@ const CommentCard = (props) => {
                 <p className="commentCardLabel">Submitted</p>
                 <p>{date} - {time}</p>
                 </label>
-                <label className="footerInfo">
-                <p className="commentCardLabel">Votes</p>
-                <p>{votes}</p>
-                </label>
+                <VoteCounter review_id={review_id} comment_id={comment_id} votes={votes}/>
             </div>
         </div>
     )
