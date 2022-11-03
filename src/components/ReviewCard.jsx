@@ -24,7 +24,7 @@ const ReviewCard = (props) => {
             </div>
             {full ? <p className="reviewCardBody">{review_body}</p> :
             review_body.length < 280 ? <p className="reviewCardBody">{review_body}</p> :
-            <p className="reviewCardBody">{review_body.slice(0, 280)}.....</p>}
+            <p className="reviewCardBody">{review_body.slice(0, 280)}.... <span id="moreReview">click for more</span></p>}
 
             <div className="reviewCardFooter">
                 <label className="footerInfo">
