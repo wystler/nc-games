@@ -37,10 +37,20 @@
     border-bottom:5px solid white;
     height:80px;
     display:flex;
+    flex-direction: column;
+    width:80vw;
+    align-items:center;
     justify-content: center;
     position:fixed;
     top:0;
     width:100vw;
+}
+
+#selectSorting {
+    display:flex;
+    font-size: 14pt;
+    height:50%;
+    align-self:center;
 }
 
 #reviewFilterCategory {
@@ -49,10 +59,10 @@
     align-self:center;
 }
 
-#reviewFilterCategory > select{
+.filterSelecter {
     text-align:center;
     font-size:12pt;
-    margin:10px;
+    margin:5px;
 }
 
 .reviewCard {
