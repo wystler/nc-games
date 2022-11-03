@@ -2,7 +2,6 @@ const CommentCard = (props) => {
 
     return (
         <div>
-            
         </div>
     )
 }

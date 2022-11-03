@@ -12,14 +12,18 @@ const Comments = (props) => {
         fetchComments(review_id)
             .then((commentArray) => {
                 setIsLoading(false)
-                setComments(commentArray)
+                if (Array.isArray(commentArray)) {
+                setComments(commentArray)}             
             })
     }, [review_id])
 
     return (
         <div id="comments">
-            {isLoading ? <p className="loadingMessage">Loading</p> : 
-            comments.map(comment => {return <CommentCard key={review_id} comment={comment} />})}
+            {
+            isLoading ? <p className="loadingMessage">Loading</p> : 
+            comments.length > 0 ? comments.map(comment => {return <CommentCard key={review_id} comment={comment} />}) :
+            <p>No comments for this review</p>
+            }
         </div>
     )
 }
