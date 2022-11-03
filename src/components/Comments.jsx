@@ -21,7 +21,7 @@ const Comments = (props) => {
         <div id="comments">
             {
             isLoading ? <p className="loadingMessage">Loading</p> : 
-            comments.length > 0 ? comments.map(comment => {return <CommentCard key={review_id} comment={comment} />}) :
+            comments.length > 0 ? comments.map(comment => {return <CommentCard key={comment.comment_id} comment={comment} />}) :
             <p>No comments for this review</p>
             }
         </div>
