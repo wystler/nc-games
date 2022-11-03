@@ -9,18 +9,20 @@ const Reviews = () => {
     const { category } = useParams()
     const [reviews, setReviews] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const [sortBy, setSortBy] = useState("created_at")
+    const [order, setOrder] = useState("desc")
 
     useEffect(() => {
-        fetchReviews(category)
+        fetchReviews(category, sortBy, order)
             .then((reviewArray) => {
                 setIsLoading(false)
                 setReviews(reviewArray)
             })
-    }, [category])
+    }, [category, sortBy, order])
 
     return (
         <div id="reviews">
-            {<ReviewFilter />}
+            {<ReviewFilter setSortBy={setSortBy} setOrder={setOrder}/>}
             {isLoading ? <p className="loadingMessage">Loading</p> : 
             reviews.map(review => {return <ReviewCard key={review.review_id} review={review} />})}
         </div>
