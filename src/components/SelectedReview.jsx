@@ -19,11 +19,9 @@ const SelectedReview = (props) => {
 
     return (
         <div id="selectedReview">
-            {!review ? <p className="loadingMessage">Loading</p> : 
-            <div>        
+            {!review ? <p className="loadingMessage">Loading</p> :        
             <ReviewCard key={review.review_id} review={review} fullReview={true} />
-            <Comments review_id={review.review_id} username={username}/>
-            </div>}
+            }
         </div>
     )
 }
