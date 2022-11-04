@@ -77,3 +77,34 @@
     background-color:rgb(12, 204, 12);
     border:2px solid green;
 }
+
+.deleteComment {
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+}
+
+.deleteComment > p {
+    margin:4px;
+    font-weight: bold;
+}
+
+.deleteComment > button{
+    font-size:10pt;
+    width:30px;
+    height:30px;
+    margin:1px 10px 4px 10px;
+    border-radius: 20px;
+    border:2px solid grey;
+}
+
+.deleteComment > button:hover{
+    background-color: orangered;
+    border:2px solid rgb(189, 50, 0);
+}
+
+.deleteComment > button:disabled{
+    background-color: grey;
+    border:2px solid grey;
+}
+

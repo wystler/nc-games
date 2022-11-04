@@ -6,15 +6,15 @@ const DeleteComment = (props) => {
 
     const handleDeleteClick = (event) => {
         event.preventDefault()
+        setDelComment(true)
         removeComment(comment_id)
             .then((res) => {
-        setDelComment(true)
             })
     }
 
     return (
-        <div>
-            <p>Delete comment?</p>
+        <div className="deleteComment">
+            <p>Delete?</p>
             <button onClick={handleDeleteClick} disabled={delComment}>X</button>
         </div>
     )

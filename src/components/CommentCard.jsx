@@ -23,7 +23,7 @@ const CommentCard = (props) => {
                 </label>
                 {username === author ? 
                 <DeleteComment comment_id={comment_id} delComment={delComment} setDelComment={setDelComment}/> :
-                <p></p>
+                <></>
                 }
                 <VoteCounter review_id={review_id} comment_id={comment_id} votes={votes}/>
             </div>
