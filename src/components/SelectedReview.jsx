@@ -4,11 +4,12 @@ import ReviewCard from './ReviewCard.jsx'
 import Comments from './Comments.jsx'
 import { useParams, Link } from 'react-router-dom'
 
-const SelectedReview = () => {
+const SelectedReview = (props) => {
 
     const { review_id } = useParams()
     const [review, setReview] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const { username } = props
 
     useEffect(() => {
         fetchReviewById(review_id)
@@ -24,7 +25,7 @@ const SelectedReview = () => {
             <>
             <Link to="/" id="homeLink">Back to reviews</Link>
             <ReviewCard key={review.review_id} review={review} fullReview={true} />
-            <Comments review_id={review.review_id} />
+            <Comments review_id={review.review_id} username={username}/>
             </>}
         </div>
     )
