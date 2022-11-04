@@ -31,7 +31,7 @@ const SelectedReview = (props) => {
             <>
             <Link to="/" id="homeLink">Back to reviews</Link>
             <ReviewCard key={review.review_id} review={review} fullReview={true} />
-            <Comments review_id={review.review_id} username={username}/>
+            {/* <Comments review_id={review.review_id} username={username}/> */}
             </>}
         </div>
     )
