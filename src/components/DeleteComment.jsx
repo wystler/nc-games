@@ -2,11 +2,13 @@ import { removeComment } from '../utils.jsx'
 
 const DeleteComment = (props) => {
 
-    const { comment_id } = props
+    const { comment_id, setDelComment } = props
 
     const handleDeleteClick = () => {
         removeComment(comment_id)
-            .then()
+            .then((res) => {
+                setDelComment(true)
+            })
     }
 
     return (
