@@ -1,5 +1,6 @@
 import VoteCounter from "./VoteCounter";
 import '../css/Comments.css'
+import DeleteComment from "./DeleteComment";
 
 const CommentCard = (props) => {
 
@@ -20,6 +21,8 @@ const CommentCard = (props) => {
                 <p>{date} - {time}</p>
                 </label>
                 <VoteCounter review_id={review_id} comment_id={comment_id} votes={votes}/>
+                <DeleteComment comment_id={comment_id}/>
+                if username=author, enable deletecomment element
             </div>
         </div>
     )
