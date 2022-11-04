@@ -17,7 +17,9 @@ const Comments = (props) => {
                 setIsLoading(false)
                 setDelComment(false)
                 if (Array.isArray(commentArray)) {
-                setComments(commentArray)}             
+                setComments(commentArray)
+            } else {
+                setComments([])     }        
             })
     }, [review_id, addComment, delComment])
 

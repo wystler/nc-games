@@ -4,10 +4,11 @@ const DeleteComment = (props) => {
 
     const { comment_id, delComment, setDelComment } = props
 
-    const handleDeleteClick = () => {
+    const handleDeleteClick = (event) => {
+        event.preventDefault()
         removeComment(comment_id)
-        setDelComment(true)
             .then((res) => {
+        setDelComment(true)
             })
     }
 
