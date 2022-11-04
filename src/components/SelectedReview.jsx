@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { fetchReviewById } from '../utils.jsx'
 import ReviewCard from './ReviewCard.jsx'
-import Comments from './Comments.jsx'
+// import Comments from './Comments.jsx'
 import { useParams, Link } from 'react-router-dom'
 
 const SelectedReview = (props) => {
@@ -9,7 +9,7 @@ const SelectedReview = (props) => {
     const { review_id } = useParams()
     const [review, setReview] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    const { username } = props
+    // const { username } = props
     const [noReviewErr, setNoReviewErr] = useState(false)
 
     useEffect(() => {
