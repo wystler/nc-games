@@ -16,8 +16,15 @@ export const fetchReviewById = (review_id) => {
         })
 }
 
-export const updateVoteCount = (review_id, voteCount) => {
+export const updateReviewVoteCount = (review_id, voteCount) => {
     return axios.patch(`reviews/${review_id}`, voteCount)
+        .then((res) => {
+            return res
+        })
+}
+
+export const updateCommentVoteCount = (comment_id, voteCount) => {
+    return axios.patch(`comments/${comment_id}`, voteCount)
         .then((res) => {
             return res
         })
@@ -34,5 +41,12 @@ export const addComment = (review_id, newComment) => {
     return axios.post(`reviews/${review_id}/comments`, newComment)
         .then((res) => {
             return res.status
+        })
+}
+
+export const removeComment = (comment_id) => {
+    return axios.delete(`comments/${comment_id}`)
+        .then((res) => {
+            return res
         })
 }

@@ -9,15 +9,19 @@ const Comments = (props) => {
     const [comments, setComments] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [addComment, setAddComment] = useState(false)
+    const [delComment, setDelComment] = useState(false)
 
     useEffect(() => {
         fetchComments(review_id)
             .then((commentArray) => {
                 setIsLoading(false)
+                setDelComment(false)
                 if (Array.isArray(commentArray)) {
-                setComments(commentArray)}             
+                setComments(commentArray)
+            } else {
+                setComments([])     }        
             })
-    }, [review_id, addComment])
+    }, [review_id, addComment, delComment])
 
     const handleClickAddYourComment = () => {
         setAddComment(true)
@@ -32,7 +36,7 @@ const Comments = (props) => {
             <button onClick={handleClickAddYourComment} className="commentButton">Add your own comment</button>}
             {
             isLoading ? <p className="loadingMessage">Loading</p> : 
-            comments.length > 0 ? comments.map(comment => {return <CommentCard key={comment.comment_id} comment={comment} />}) :
+            comments.length > 0 ? comments.map(comment => {return <CommentCard key={comment.comment_id} comment={comment} delComment={delComment} setDelComment={setDelComment} username={username}/>}) :
             <p>No comments for this review</p>
             }
         </div>
