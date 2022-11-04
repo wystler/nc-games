@@ -29,3 +29,10 @@ export const fetchComments = (review_id) => {
             return res.data
         })
 }
+
+export const addComment = (review_id, newComment) => {
+    return axios.post(`reviews/${review_id}/comments`, newComment)
+        .then((res) => {
+            return res.status
+        })
+}
