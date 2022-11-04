@@ -2,19 +2,19 @@ import { removeComment } from '../utils.jsx'
 
 const DeleteComment = (props) => {
 
-    const { comment_id, setDelComment } = props
+    const { comment_id, delComment, setDelComment } = props
 
     const handleDeleteClick = () => {
         removeComment(comment_id)
+        setDelComment(true)
             .then((res) => {
-                setDelComment(true)
             })
     }
 
     return (
         <div>
             <p>Delete comment?</p>
-            <button onClick={handleDeleteClick}>X</button>
+            <button onClick={handleDeleteClick} disabled={delComment}>X</button>
         </div>
     )
 }

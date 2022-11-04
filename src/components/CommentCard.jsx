@@ -5,7 +5,7 @@ import DeleteComment from "./DeleteComment";
 const CommentCard = (props) => {
 
     const {comment_id, body, votes, author, review_id, created_at} = props.comment
-    const {setDelComment, username} = props
+    const {delComment, setDelComment, username} = props
     const date = created_at.replace(/T.*/,"")
     const time = created_at.match(/\d\d:\d\d/)
 
@@ -22,7 +22,7 @@ const CommentCard = (props) => {
                 <p>{date} - {time}</p>
                 </label>
                 {username === author ? 
-                <DeleteComment comment_id={comment_id} setDelComment={setDelComment}/> :
+                <DeleteComment comment_id={comment_id} delComment={delComment} setDelComment={setDelComment}/> :
                 <p></p>
                 }
                 <VoteCounter review_id={review_id} comment_id={comment_id} votes={votes}/>

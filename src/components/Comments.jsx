@@ -34,7 +34,7 @@ const Comments = (props) => {
             <button onClick={handleClickAddYourComment} className="commentButton">Add your own comment</button>}
             {
             isLoading ? <p className="loadingMessage">Loading</p> : 
-            comments.length > 0 ? comments.map(comment => {return <CommentCard key={comment.comment_id} comment={comment} setDelComment={setDelComment} username={username}/>}) :
+            comments.length > 0 ? comments.map(comment => {return <CommentCard key={comment.comment_id} comment={comment} delComment={delComment} setDelComment={setDelComment} username={username}/>}) :
             <p>No comments for this review</p>
             }
         </div>
