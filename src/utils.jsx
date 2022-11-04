@@ -37,3 +37,11 @@ export const fetchComments = (review_id) => {
             return res.data
         })
 }
+
+export const removeComment = (comment_id) => {
+    console.log(comment_id)
+    return axios.delete(`comments/${comment_id}`)
+        .then((res) => {
+            return res
+        })
+}
