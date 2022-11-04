@@ -20,9 +20,8 @@ const CommentCard = (props) => {
                 <p className="commentCardLabel">Submitted</p>
                 <p>{date} - {time}</p>
                 </label>
-                <VoteCounter review_id={review_id} comment_id={comment_id} votes={votes}/>
                 <DeleteComment comment_id={comment_id}/>
-                if username=author, enable deletecomment element
+                <VoteCounter review_id={review_id} comment_id={comment_id} votes={votes}/>
             </div>
         </div>
     )
