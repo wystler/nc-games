@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react'
 import { fetchReviewById } from '../utils.jsx'
 import ReviewCard from './ReviewCard.jsx'
-import Comments from './Comments.jsx'
 import { useParams } from 'react-router-dom'
 
 const SelectedReview = (props) => {
 
     const { review_id } = useParams()
     const [review, setReview] = useState(null)
-    const { username } = props
 
     useEffect(() => {
         fetchReviewById(review_id)
