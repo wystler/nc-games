@@ -1,5 +1,5 @@
 import axios from "axios"
-axios.defaults.baseURL = "https://nc-board-game-api.herokuapp.com/api/"
+axios.defaults.baseURL = "https://wystler-ncgames-api.cyclic.app/api/"
 
 export const fetchReviews = (category, sort_by, order) => {
     let queryString = `?sort_by=${sort_by}&order=${order}`
