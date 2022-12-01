@@ -18,6 +18,7 @@
     border:3px solid rgb(134, 111, 111);
     margin:5px;
     width:480px;
+    max-width: 90vw;
 }
 
 .commentCardBody {
@@ -31,6 +32,7 @@
     justify-content: space-evenly;
     border:2px solid rgb(94, 94, 117);
     margin:5px;
+    flex-wrap: wrap;
 }
 
 .commentCardLabel {
@@ -43,6 +45,7 @@
     height:40px;
     border-radius: 20px;
     border:2px solid grey;
+    max-width:90vw;
 }
 
 #addCommentForm {

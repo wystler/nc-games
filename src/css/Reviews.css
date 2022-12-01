@@ -34,9 +34,9 @@
 #reviewFilter {
     background-color:rgb(91, 103, 155);
     border-bottom:5px solid white;
-    height:80px;
     display:flex;
     flex-direction: column;
+    flex-wrap:wrap;
     width:80vw;
     align-items:center;
     justify-content: center;
@@ -73,6 +73,7 @@
     border:3px solid rgb(134, 111, 111);
     margin:10px;
     min-height:280px;
+    max-width:90vw;
     width:480px;
 }
 
@@ -110,6 +111,7 @@
     display:flex;
     align-items: center;
     justify-content: space-evenly;
+    flex-wrap:wrap;
     border:2px solid rgb(94, 94, 117);
     margin:5px;
 }
