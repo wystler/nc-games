@@ -8,11 +8,9 @@
 
 #selectedReview {
     display:flex;
-    flex-wrap:wrap;
     justify-content:center;
     flex-direction: column;
     align-items: center;
-    width:100vw;
 }
 
 .loadingMessage {
@@ -25,7 +23,6 @@
     font-size:20pt;
     color:white;
     text-decoration:none;
-    width:10000px;
     }
 
 #homeLink:hover{
